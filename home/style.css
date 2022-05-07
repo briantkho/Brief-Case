@@ -1,0 +1,8 @@
+html {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #2b2d42 0%, #090a0f 100%);
+}
+* {
+  font-family: Helvetica, sans-serif;
+  color: white;
+}
