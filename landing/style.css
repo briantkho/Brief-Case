@@ -74,6 +74,8 @@ button {
   animation: slideInLeft 0.75s;
   transition: transform 0.2s;
   transform: scale(1);
+  /* background-color: rgb(255, 255, 255, 0.1); */
+  /* border: 0.15rem solid white; */
 }
 
 button:hover {
