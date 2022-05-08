@@ -1,7 +1,7 @@
 const covidUrl = "https://api.covid19tracker.ca";
 const dropdown = document.getElementById("provinces");
 
-const getProvinces = async () => {
+const dropdownProvinces = async () => {
   const provinceEndpoint = "/provinces";
   const urlToFetch = `${covidUrl}${provinceEndpoint}`;
   try {
@@ -20,4 +20,12 @@ const getProvinces = async () => {
     alert(error);
   }
 };
-getProvinces();
+dropdownProvinces();
+
+// const gridSummary = document.querySelector("summaryTable");
+
+// const createGridSummary = async () => {
+//   gridSummary.textContent = "Quick Summary";
+// };
+
+// createGridSummary();
