@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../media/favicon.ico" />
     <title>Home</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
   </head>
   <body>
     <section class="wrapper">
@@ -16,9 +16,11 @@
       </div>
     </section>
     <div class="hero">
-      <form id="provinceForm">
-        <label>Where are you located?</label>
-        <select name="provinces" id="provinces"></select>
+      <form id="provinceButton">
+        <label>Choose your location: </label>
+        <select title="Provinces" name="provinces" id="provinces">
+          <option value="Provinces" selected disabled>Provinces</option>
+        </select>
       </form>
     </div>
   </body>

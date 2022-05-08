@@ -1,17 +1,23 @@
-const covidUrl = fetch("https://api.opencovid.ca");
+const covidUrl = "https://api.covid19tracker.ca";
+const dropdown = document.getElementById("provinces");
 
-const getProvince = async () => {
-  const provinceRequestEndpoint = "/summary";
-  const urlToFetch = covidUrl + provinceRequestEndpoint;
+const getProvinces = async () => {
+  const provinceEndpoint = "/provinces";
+  const urlToFetch = `${covidUrl}${provinceEndpoint}`;
   try {
     const response = await fetch(urlToFetch);
+    const nameCollect = [];
     if (response.ok) {
       const jsonResponse = await response.json();
-      const regions = jsonResponse.region;
-      return regions;
-      console.log(regions);
+      for (const key in jsonResponse) {
+        const element = jsonResponse[key];
+        let dropdownAdd = document.createElement("option");
+        dropdownAdd.innerHTML = element.name;
+        dropdown.appendChild(dropdownAdd);
+      }
     }
   } catch (error) {
     alert(error);
   }
 };
+getProvinces();
