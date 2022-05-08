@@ -53,7 +53,6 @@ canadaSummary();
 
 // When a Province is selected
 let value = dropdown.options[dropdown.selectedIndex].value;
-
 dropdown.onchange = () => {
   value = dropdown.options[dropdown.selectedIndex].value;
   const selectedSummary = async () => {
@@ -66,8 +65,6 @@ dropdown.onchange = () => {
       if (response.ok) {
         const jsonResponse = await response.json();
         const splitSummary = jsonResponse.data;
-        // !!! Something wrong with the "value" or splitSummary property
-        // !!! Maybe with the for loop
         for (let i = 0; i < splitSummary.length; i++) {
           if (splitSummary[i].province === value) {
             const cases = splitSummary[i].change_cases;
@@ -89,4 +86,24 @@ dropdown.onchange = () => {
   selectedSummary();
 };
 
-// Display Summary Data of Selected Province
+// Last Updated
+let update = document.querySelector(".updated");
+const lastUpdated = async () => {
+  const updateEndpoint = "/summary/split";
+  const urlToFetch = `${covidUrl}${updateEndpoint}`;
+
+  try {
+    const response = await fetch(urlToFetch);
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      const updates = jsonResponse.last_updated;
+      update.innerHTML = `Last Updated: ${updates}`;
+    }
+  } catch (error) {
+    alert(error);
+  }
+};
+
+lastUpdated();
+
+// TODO: Update h1 tag to say province or Canada
