@@ -9,7 +9,12 @@ const dropdownProvinces = async () => {
   const provinceEndpoint = "/summary/split";
   const urlToFetch = `${covidUrl}${provinceEndpoint}`;
   try {
-    const response = await fetch(urlToFetch);
+    const response = await fetch(urlToFetch, {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+      },
+    });
     const nameCollect = [];
     if (response.ok) {
       const jsonResponse = await response.json();
@@ -37,7 +42,12 @@ const canadaSummary = async () => {
   const urlToFetch = `${covidUrl}${summaryEndpoint}`;
 
   try {
-    const response = await fetch(urlToFetch);
+    const response = await fetch(urlToFetch, {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+      },
+    });
     if (response.ok) {
       const jsonResponse = await response.json();
       const cases = jsonResponse.data[0].change_cases;
@@ -61,7 +71,12 @@ dropdown.onchange = () => {
     const summarySplitEndpoint = "/summary/split";
     const urlToFetch = `${covidUrl}${summarySplitEndpoint}`;
     try {
-      const response = await fetch(urlToFetch);
+      const response = await fetch(urlToFetch, {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+        },
+      });
 
       //loop through each data to make sure value === province
       if (response.ok) {
@@ -95,7 +110,12 @@ const lastUpdated = async () => {
   const urlToFetch = `${covidUrl}${updateEndpoint}`;
 
   try {
-    const response = await fetch(urlToFetch);
+    const response = await fetch(urlToFetch, {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+      },
+    });
     if (response.ok) {
       const jsonResponse = await response.json();
       const updates = jsonResponse.last_updated;
