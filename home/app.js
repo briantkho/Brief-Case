@@ -36,6 +36,7 @@ dropdownProvinces();
 let caseNumber = document.querySelector(".newCases");
 let testNumber = document.querySelector(".newTests");
 let recoveriesNumber = document.querySelector(".newRecoveries");
+let headerName = document.querySelector(".header");
 
 const canadaSummary = async () => {
   const summaryEndpoint = "/summary";
@@ -91,7 +92,8 @@ dropdown.onchange = () => {
             return (
               (caseNumber.innerHTML = `${cases}`),
               (testNumber.innerHTML = `${tests}`),
-              (recoveriesNumber.innerHTML = `${recoveries}`)
+              (recoveriesNumber.innerHTML = `${recoveries}`),
+              (headerName.innerHTML = `Quick Summary of ${splitSummary[i].province}`)
             );
           }
         }
@@ -127,5 +129,3 @@ const lastUpdated = async () => {
 };
 
 lastUpdated();
-
-// TODO: Update h1 tag to say province or Canada
