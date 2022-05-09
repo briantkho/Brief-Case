@@ -1,3 +1,5 @@
+// Documentation Link: https://api.covid19tracker.ca/docs/1.0/overview
+
 const covidUrl = "https://api.covid19tracker.ca";
 
 // Dropdown Menu to View Provinces
