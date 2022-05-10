@@ -131,3 +131,29 @@ const lastUpdated = async () => {
 lastUpdated();
 
 // !!! Display Vaccination Info
+
+// Vaccinations Data in Canada
+
+const canadaVaccineData = async () => {
+  const vaccineCanadaEndpoint = "/summary";
+  const urlToFetch = `${covidUrl}${vaccineCanadaEndpoint}`;
+
+  try {
+    const response = await fetch(urlToFetch, {
+      method: "GET",
+      headers: {
+        accept: application / json,
+      },
+    });
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      const newVaccination = "";
+      const newVaccinated = "";
+      const newBoosters = "";
+      const newDistributed = "";
+      //!!! Fill out above with jsonResoponse...
+    }
+  } catch (error) {
+    alert(error);
+  }
+};
