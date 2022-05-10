@@ -33,6 +33,7 @@ const dropdownProvinces = async () => {
 dropdownProvinces();
 
 // Fetch and Display Data of All of Canada
+// !!! Todo: change summary data to reports data
 let caseNumber = document.querySelector(".newCases");
 let testNumber = document.querySelector(".newTests");
 let recoveriesNumber = document.querySelector(".newRecoveries");
@@ -127,5 +128,6 @@ const lastUpdated = async () => {
     alert(error);
   }
 };
-
 lastUpdated();
+
+// !!! Display Vaccination Info

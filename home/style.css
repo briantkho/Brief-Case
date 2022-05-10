@@ -1,8 +1,9 @@
 html {
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   overflow-anchor: none;
-  background: radial-gradient(ellipse at bottom, #2b2d42 0%, #090a0f 100%);
+  /* background: radial-gradient(ellipse at bottom, #2b2d42 0%, #090a0f 100%); */
+  background-color: #2b2d42;
 }
 * {
   font-family: Helvetica, sans-serif;
@@ -89,14 +90,14 @@ html {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.summaryTable h1 {
+.summaryTable .header {
   color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 1rem;
 }
-.content {
+.summaryTable .content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -104,10 +105,83 @@ html {
   align-items: center;
   text-align: center;
 }
-.content p {
+.summaryTable .content p {
   color: black;
 }
-.updated {
+.summaryTable .updated {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.vaccinationData {
+  z-index: 1;
+  /* ff 3.6+ */
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(235, 249, 255, 1) 0%,
+    rgba(141, 153, 174, 1) 100%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(235, 249, 255, 1) 0%,
+    rgba(141, 153, 174, 1) 100%
+  );
+
+  /* opera 11.10+ */
+  background: -o-linear-gradient(
+    180deg,
+    rgba(235, 249, 255, 1) 0%,
+    rgba(141, 153, 174, 1) 100%
+  );
+
+  /* ie 6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8D99AE', endColorstr='#EBF9FF', GradientType=1 );
+
+  /* ie 10+ */
+  background: -ms-linear-gradient(
+    180deg,
+    rgba(235, 249, 255, 1) 0%,
+    rgba(141, 153, 174, 1) 100%
+  );
+
+  /* global 94%+ browsers support */
+  background: linear-gradient(
+    180deg,
+    rgba(235, 249, 255, 1) 0%,
+    rgba(141, 153, 174, 1) 100%
+  );
+
+  margin: 5rem 7rem;
+  border-radius: 0.15rem;
+  padding: 1rem 3rem 2rem 3rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.vaccinationData .header {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.vaccinationData .content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+.vaccinationData .content p {
+  color: black;
+}
+.vaccinationData .updated {
   color: black;
   display: flex;
   justify-content: center;
@@ -116,7 +190,7 @@ html {
 }
 
 /* !!! Layer Stars to Bottom */
-#stars {
+/* #stars {
   width: 1px;
   height: 1px;
   z-index: 3;
@@ -685,4 +759,4 @@ html {
   to {
     transform: translateY(-2000px);
   }
-}
+} */
