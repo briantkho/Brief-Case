@@ -38,7 +38,7 @@ const dropdownProvinces = async () => {
       }
     }
   } catch (error) {
-    alert(error);
+    console.log(error);
   }
 };
 dropdownProvinces();
@@ -72,7 +72,7 @@ const canadaSummary = async () => {
       recoveriesNumber.innerHTML = `${recoveries}`;
     }
   } catch (error) {
-    alert(error);
+    console.log(error);
   }
 };
 canadaSummary();
@@ -134,7 +134,7 @@ dropdown.onchange = () => {
         }
       }
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   };
   selectedSummary();
@@ -159,7 +159,7 @@ const lastUpdated = async () => {
       summaryUpdate.innerHTML = `Last Updated: ${updates}`;
     }
   } catch (error) {
-    alert(error);
+    console.log(error);
   }
 };
 lastUpdated();
@@ -205,7 +205,7 @@ const canadaVaccineData = async () => {
       htmlVaccinateUpdated.innerHTML = `Last Updated: ${vaccineUpdated}`;
     }
   } catch (error) {
-    alert(error);
+    console.log(error);
   }
 };
 canadaVaccineData();
