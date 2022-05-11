@@ -1,7 +1,7 @@
 html {
-  height: 100%;
+  /* height: 100%; */
   /* overflow: hidden; */
-  overflow-anchor: none;
+  /* overflow-anchor: none; */
   /* background: radial-gradient(ellipse at bottom, #2b2d42 0%, #090a0f 100%); */
   background-color: #2b2d42;
 }
@@ -108,7 +108,8 @@ html {
 .summaryTable .content p {
   color: black;
 }
-.summaryTable .updated {
+.summaryUpdated,
+.vaccineUpdated {
   color: black;
   display: flex;
   justify-content: center;
@@ -157,6 +158,7 @@ html {
   );
 
   margin: 5rem 7rem;
+  /* margin-bottom: 8rem; */
   border-radius: 0.15rem;
   padding: 1rem 3rem 2rem 3rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
