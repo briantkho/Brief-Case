@@ -83,9 +83,9 @@ html {
     rgba(141, 153, 174, 1) 100%
   );
 
-  margin: 0 7rem;
+  margin: 0rem 10rem 5rem 10rem;
   border-radius: 0.15rem;
-  padding: 1rem 3rem 2rem 3rem;
+  padding: 1rem 1rem 2rem 1rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -159,7 +159,6 @@ html {
   );
 
   margin: 5rem 10rem;
-  /* margin-bottom: 8rem; */
   border-radius: 0.15rem;
   padding: 1rem 1rem 2rem 1rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
