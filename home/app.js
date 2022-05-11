@@ -2,6 +2,17 @@
 
 const covidUrl = "https://api.covid19tracker.ca";
 
+// Vaccination HTML
+const htmlChangeVaccinations = document.querySelector(".numNewVaccinations");
+const htmlChangeVaccinated = document.querySelector(".numNewVaccinated");
+const htmlChangeBoosters = document.querySelector(".numNewBoosters");
+const htmlChangeDistributed = document.querySelector(".numNewDistributed");
+const htmlTotalVaccination = document.querySelector(".numTotalVaccination");
+const htmlTotalVaccinated = document.querySelector(".numTotalVaccinated");
+const htmlTotalBoosters = document.querySelector(".numTotalBoosters");
+const htmlTotalDistributed = document.querySelector(".numTotalDistributed");
+const htmlVaccinateUpdated = document.querySelector(".vaccineUpdated");
+
 // Dropdown Menu to View Provinces
 const dropdown = document.getElementById("provinces");
 
@@ -37,7 +48,8 @@ dropdownProvinces();
 const caseNumber = document.querySelector(".newCases");
 const testNumber = document.querySelector(".newTests");
 const recoveriesNumber = document.querySelector(".newRecoveries");
-const headerName = document.querySelector(".header");
+const headerSummaryName = document.querySelector(".summaryHeader");
+const headerVaccineName = document.querySelector(".vaccineHeader");
 
 const canadaSummary = async () => {
   const summaryEndpoint = "/summary";
@@ -86,15 +98,37 @@ dropdown.onchange = () => {
         const splitSummary = jsonResponse.data;
         for (let i = 0; i < splitSummary.length; i++) {
           if (splitSummary[i].province === value) {
+            // For Summary Table
             const cases = splitSummary[i].change_cases;
             const tests = splitSummary[i].change_tests;
             const recoveries = splitSummary[i].change_recoveries;
-            console.log(cases, tests, recoveries);
+            const newVaccine = splitSummary[i].change_vaccinations;
+            const newVaccinated = splitSummary[i].change_vaccinated;
+            const newBoosters =
+              Number(splitSummary[i].change_boosters_1) +
+              Number(splitSummary[i].change_boosters_2);
+            const newDistributed = splitSummary[i].change_vaccines_distributed;
+            const totalVaccine = splitSummary[i].total_vaccinations;
+            const totalVaccinated = splitSummary[i].total_vaccinated;
+            const totalBoosters =
+              Number(splitSummary[i].total_boosters_1) +
+              Number(splitSummary[i].total_boosters_2);
+            const totalDistributed = splitSummary[i].total_vaccines_distributed;
+
             return (
               (caseNumber.innerHTML = `${cases}`),
               (testNumber.innerHTML = `${tests}`),
               (recoveriesNumber.innerHTML = `${recoveries}`),
-              (headerName.innerHTML = `Quick Summary of ${splitSummary[i].province}`)
+              (htmlChangeVaccinations.innerHTML = newVaccine),
+              (htmlChangeVaccinated.innerHTML = newVaccinated),
+              (htmlChangeBoosters.innerHTML = newBoosters),
+              (htmlChangeDistributed.innerHTML = newDistributed),
+              (htmlTotalVaccination.innerHTML = totalVaccine),
+              (htmlTotalVaccinated.innerHTML = totalVaccinated),
+              (htmlTotalBoosters.innerHTML = totalBoosters),
+              (htmlTotalDistributed.innerHTML = totalDistributed),
+              (headerSummaryName.innerHTML = `Quick Summary of ${splitSummary[i].province}`),
+              (headerVaccineName.innerHTML = `Vaccinations in ${splitSummary[i].province}`)
             );
           }
         }
@@ -133,16 +167,6 @@ lastUpdated();
 // !!! Display Vaccination Info
 
 // Vaccinations Data in Canada
-const htmlChangeVaccinations = document.querySelector(".numNewVaccinations");
-const htmlChangeVaccinated = document.querySelector(".numNewVaccinated");
-const htmlChangeBoosters = document.querySelector(".numNewBoosters");
-const htmlChangeDistributed = document.querySelector(".numNewDistributed");
-const htmlTotalVaccination = document.querySelector(".numTotalVaccination");
-const htmlTotalVaccinated = document.querySelector(".numTotalVaccinated");
-const htmlTotalBoosters = document.querySelector(".numTotalBoosters");
-const htmlTotalDistributed = document.querySelector(".numTotalDistributed");
-const htmlVaccinateUpdated = document.querySelector(".vaccineUpdated");
-
 const canadaVaccineData = async () => {
   const vaccineCanadaEndpoint = "/summary";
   const urlToFetch = `${covidUrl}${vaccineCanadaEndpoint}`;
