@@ -24,6 +24,7 @@ const dropdownProvinces = async () => {
       method: "GET",
       headers: {
         accept: "application/json",
+        // "Access-Control-Allow-Origin": "*",
       },
     });
     const nameCollect = [];
@@ -60,6 +61,7 @@ const canadaSummary = async () => {
       method: "GET",
       headers: {
         accept: "application/json",
+        // "Access-Control-Allow-Origin": "*",
       },
     });
     if (response.ok) {
@@ -89,6 +91,7 @@ dropdown.onchange = () => {
         method: "GET",
         headers: {
           accept: "application/json",
+          // "Access-Control-Allow-Origin": "*",
         },
       });
 
@@ -151,6 +154,7 @@ const lastUpdated = async () => {
       method: "GET",
       headers: {
         accept: "application/json",
+        // "Access-Control-Allow-Origin": "*",
       },
     });
     if (response.ok) {
@@ -176,6 +180,7 @@ const canadaVaccineData = async () => {
       method: "GET",
       headers: {
         accept: "application/json",
+        // "Access-Control-Allow-Origin": "*",
       },
     });
     if (response.ok) {

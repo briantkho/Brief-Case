@@ -5,34 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="../media/favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <title>Home</title>
     <link rel="stylesheet" href="style.css" />
-
-    <title>Brief-Case</title>
+    <script src="app.js" defer></script>
   </head>
   <body>
     <section class="wrapper">
-      <div id="stars"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
+      <div class="title">
+        <!-- <p>Brief-Case</p> -->
+        <h1>Your COVID-19 Summaries All in One Place</h1>
+      </div>
     </section>
-    <section class="header">
-      <a href="https://www.brianho.tech/" target="_blank">
-        <img class="logo" src="./media/whiteLogo.svg" alt="logo" />
-      </a>
-      <p class="headerText">Designed by Brian Ho</p>
-    </section>
-
     <div class="hero">
-      <h1 class="title">Brief-Case</h1>
-      <p class="subtitle">Get your daily COVID-19 summary!</p>
-      <a href="./home/home.html">
-        <button>Proceed</button>
-      </a>
+      <form id="provinceButton">
+        <label>Choose your location: </label>
+        <select title="Provinces" name="provinces" id="provinces">
+          <option id="options" value="Canada" selected disabled>Canada</option>
+        </select>
+      </form>
+      <div class="summaryTable">
+        <h1 class="summaryHeader">Quick Summary of Canada</h1>
+        <div class="content">
+          <p class="cases">New Cases</p>
+          <p class="tests">New Tests</p>
+          <p class="recoveries">New Recoveries</p>
+          <p class="newCases">-</p>
+          <p class="newTests">-</p>
+          <p class="newRecoveries">-</p>
+        </div>
+        <div class="summaryUpdated">Last Updated: --/--/--</div>
+      </div>
+    </div>
+
+    <div class="vaccinationData">
+      <h1 class="vaccineHeader">Vaccinations in Canada</h1>
+      <div class="content">
+        <p class="newVaccinations">New Vaccinations</p>
+        <p class="newVaccinated">New Vaccinated</p>
+        <p class="newBoosters">New Boosters</p>
+        <p class="newDistributed">New Distributed</p>
+        <p class="numNewVaccinations">-</p>
+        <p class="numNewVaccinated">-</p>
+        <p class="numNewBoosters">-</p>
+        <p class="numNewDistributed">-</p>
+        <p class="totalVaccinations">Total Vaccinations</p>
+        <p class="totalVaccinated">Total Vaccinated</p>
+        <p class="totalBoosters">Total Boosters</p>
+        <p class="totalDistributed">Total Distributed</p>
+        <p class="numTotalVaccination">-</p>
+        <p class="numTotalVaccinated">-</p>
+        <p class="numTotalBoosters">-</p>
+        <p class="numTotalDistributed">-</p>
+      </div>
+      <div class="vaccineUpdated">Last Updated: --/--/--</div>
+    </div>
+
+    <div class="newsFeed">
+      <h1 class="title">Recent News around Canada</h1>
+      <rssapp-wall id="jxkN6Xva5bH9OqH7"></rssapp-wall>
+      <script
+        src="https://widget.rss.app/v1/wall.js"
+        type="text/javascript"
+        async
+      ></script>
     </div>
   </body>
 </html>
