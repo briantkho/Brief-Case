@@ -214,3 +214,58 @@ const canadaVaccineData = async () => {
   }
 };
 canadaVaccineData();
+
+// News Feed API
+const apiKey = "2ff3c47e76aa42e8b93c7d37e7777452";
+const newsLink = "https://newsapi.org/v2/top-headlines?country=ca";
+const newsFeed = document.querySelector(".newsFeed");
+const a = document.createElement("a");
+const img = new Image();
+const div = document.createElement("div");
+
+const recentNews = async () => {
+  const covidEndpoint = "&category=health&q=covid";
+  const urlToFetch = `${newsLink}${covidEndpoint}`;
+
+  try {
+    const response = await fetch(urlToFetch, {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        "X-Api-Key": "2ff3c47e76aa42e8b93c7d37e7777452",
+      },
+    });
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      console.log(jsonResponse);
+
+      const loopNews = () => {
+        //!!! Do a for-in loop over the for loop
+        for (let i = 0; i < 10; i++) {
+          let withoutDash = jsonResponse.articles[i].title;
+          withoutDash = withoutDash.split(" - ")[0];
+
+          // Image Link
+          img.src = jsonResponse.articles[i].urlToImage;
+          img.onclick = function () {
+            window.open(jsonResponse.articles[i].url);
+          };
+          // Title Linking
+          a.setAttribute("href", jsonResponse.articles[i].url);
+          a.innerText = withoutDash;
+
+          // Combine title and text
+          div.className = "container";
+          div.append(img, a);
+          newsFeed.appendChild(div);
+          console.log(newsFeed);
+        }
+      };
+      loopNews();
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+recentNews();
