@@ -195,8 +195,11 @@ html {
 
 .newsFeed {
   display: grid;
-  grid-template-columns: repeat(3, 20rem);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 20rem);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
@@ -208,6 +211,7 @@ html {
   padding: 2rem 0rem 4rem 0rem;
   border-radius: 0.5rem;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  height: 20rem;
 }
 
 .container img {

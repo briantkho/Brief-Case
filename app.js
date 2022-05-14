@@ -219,12 +219,9 @@ canadaVaccineData();
 const apiKey = "2ff3c47e76aa42e8b93c7d37e7777452";
 const newsLink = "https://newsapi.org/v2/top-headlines?country=ca";
 const newsFeed = document.querySelector(".newsFeed");
-const a = document.createElement("a");
-const img = new Image();
-const div = document.createElement("div");
 
 const recentNews = async () => {
-  const covidEndpoint = "&category=health&q=covid";
+  const covidEndpoint = "&q=covid&category=health";
   const urlToFetch = `${newsLink}${covidEndpoint}`;
 
   try {
@@ -240,8 +237,10 @@ const recentNews = async () => {
       console.log(jsonResponse);
 
       const loopNews = () => {
-        //!!! Do a for-in loop over the for loop
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 12; i++) {
+          const a = document.createElement("a");
+          const img = new Image();
+          const div = document.createElement("div");
           let withoutDash = jsonResponse.articles[i].title;
           withoutDash = withoutDash.split(" - ")[0];
 
