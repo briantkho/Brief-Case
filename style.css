@@ -1,52 +1,87 @@
-html {
-  /* background: radial-gradient(ellipse at bottom, #2b2d42 0%, #090a0f 100%); */
-  background-color: white;
-}
 * {
   font-family: Helvetica, sans-serif;
-  /* color: white; */
   color: #333333;
 }
 
-.navbar {
-  text-decoration: none;
+html,
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
+.hero {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #333333;
+  left: 0;
+  right: 0;
 }
 
 .leftNav {
   display: flex;
+  margin-right: auto;
+  gap: 3rem;
 }
 
-.rightNav {
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navLinks li {
+  font-weight: lighter;
+}
+
+.navLinks a {
   text-decoration: none;
-  display: flex;
 }
 
-.title {
-  font-size: 1.5rem;
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+}
+
+.wrapper h1 {
+  font-size: 3rem;
+  max-width: 23rem;
+  padding-left: 2rem;
+}
+
+.wrapper img {
+  align-items: center;
+  width: 35rem;
+  height: auto;
+}
+
+.selector {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.newsFeed .title {
-  margin-bottom: 0;
-}
-
-#provinceButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0 1rem 0;
-  margin: 0;
-  font-size: large;
+.provinceText {
+  font-weight: lighter;
 }
 
 #provinces {
   color: #333333;
-  font-size: large;
+  font-size: 17px;
   background-color: transparent;
-  padding: 0.25rem;
+  font-weight: lighter;
   border: none;
   appearance: none;
   z-index: 1;
@@ -57,6 +92,13 @@ html {
 #provinces:hover {
   cursor: pointer;
   text-decoration-color: rgba(51, 51, 51, 1);
+}
+
+#provinceButton {
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 .newsFeed {

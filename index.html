@@ -10,38 +10,43 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <nav class="navbar">
+    <div class="header">
       <div class="leftNav">
-        <a href="https://www.brianho.tech/">
-          <img src="./media/blackLogo.svg" alt="logo" />
-        </a>
+        <img class="logo" src="./media/blackLogo.svg" alt="logo" />
         <h1>Brief-Case</h1>
       </div>
-      <li class="rightNav">
-        <ul>
-          Summary
+
+      <nav>
+        <ul class="navLinks">
+          <li><a href="#">Summary</a></li>
+          <li><a href="#">Vaccination Data</a></li>
+          <li><a href="#">Live News</a></li>
         </ul>
-        <ul>
-          Vaccination Data
-        </ul>
-        <ul>
-          News
-        </ul>
-      </li>
-    </nav>
-    <section class="wrapper">
-      <div class="title">
-        <!-- <p>Brief-Case</p> -->
-        <h1>Your COVID-19 Summaries All in One Place</h1>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="wrapper">
+        <div class="title">
+          <h1>Your COVID-19 summaries all in one place.</h1>
+        </div>
+        <img src="./media/covidSplash.svg" alt="covidSplash" />
+      </div>
+      <div class="selector">
+        <form id="provinceButton">
+          <label class="provinceText"
+            >Choose your location, then scroll to begin.
+          </label>
+          <select title="Provinces" name="provinces" id="provinces">
+            <option id="options" value="Canada" selected disabled>
+              Canada
+            </option>
+          </select>
+        </form>
       </div>
     </section>
-    <div class="hero">
-      <form id="provinceButton">
-        <label>Choose your location: </label>
-        <select title="Provinces" name="provinces" id="provinces">
-          <option id="options" value="Canada" selected disabled>Canada</option>
-        </select>
-      </form>
+
+    <section>
       <div class="summaryTable">
         <h1 class="summaryHeader">Quick Summary of Canada</h1>
         <div class="content">
@@ -54,9 +59,9 @@
         </div>
         <div class="summaryUpdated">Last Updated: --/--/--</div>
       </div>
-    </div>
+    </section>
 
-    <div class="vaccinationData">
+    <section class="vaccinationData">
       <h1 class="vaccineHeader">Vaccinations in Canada</h1>
       <div class="content">
         <p class="newVaccinations">New Vaccinations</p>
@@ -77,11 +82,11 @@
         <p class="numTotalDistributed">-</p>
       </div>
       <div class="vaccineUpdated">Last Updated: --/--/--</div>
-    </div>
+    </section>
 
-    <div class="newsContainer">
+    <section class="newsContainer">
       <h1 class="title">Recent News around Canada</h1>
       <div class="newsFeed"></div>
-    </div>
+    </section>
   </body>
 </html>
