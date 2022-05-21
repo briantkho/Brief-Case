@@ -24,7 +24,6 @@ const dropdownProvinces = async () => {
       method: "GET",
       headers: {
         accept: "application/json",
-        // "Access-Control-Allow-Origin": "*",
       },
     });
     const nameCollect = [];
@@ -130,8 +129,8 @@ dropdown.onchange = () => {
               (htmlTotalVaccinated.innerHTML = totalVaccinated),
               (htmlTotalBoosters.innerHTML = totalBoosters),
               (htmlTotalDistributed.innerHTML = totalDistributed),
-              (headerSummaryName.innerHTML = `Quick Summary of ${splitSummary[i].province}`),
-              (headerVaccineName.innerHTML = `Vaccinations in ${splitSummary[i].province}`)
+              (headerSummaryName.innerHTML = `Summary ${splitSummary[i].province}`),
+              (headerVaccineName.innerHTML = `Vaccinations ${splitSummary[i].province}`)
             );
           }
         }
@@ -154,7 +153,6 @@ const lastUpdated = async () => {
       method: "GET",
       headers: {
         accept: "application/json",
-        // "Access-Control-Allow-Origin": "*",
       },
     });
     if (response.ok) {
@@ -167,8 +165,6 @@ const lastUpdated = async () => {
   }
 };
 lastUpdated();
-
-// !!! Display Vaccination Info
 
 // Vaccinations Data in Canada
 const canadaVaccineData = async () => {
@@ -257,7 +253,6 @@ const recentNews = async () => {
           div.className = "container";
           div.append(img, a);
           newsFeed.appendChild(div);
-          console.log(newsFeed);
         }
       };
       loopNews();

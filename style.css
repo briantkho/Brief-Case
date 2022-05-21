@@ -11,12 +11,18 @@ body {
 }
 
 section {
-  /* scroll-snap-align: start; */
+  scroll-snap-align: start;
+}
+
+.mainPage {
+  width: 100%;
+  height: 100%;
+  background-color: #333333;
 }
 
 .hero {
-  /* overflow-y: scroll;
-  scroll-snap-type: y mandatory; */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 .header {
@@ -103,7 +109,10 @@ section {
 
 .summaryAll {
   /* margin-top: 4rem; */
+  width: 100%;
+  height: 100%;
   padding: 8rem 0 9rem 0;
+  background-color: rebeccapurple;
 }
 
 .summaryTable {
@@ -115,7 +124,7 @@ section {
 }
 .summaryHeader {
   font-size: 4rem;
-  max-width: 1px;
+  max-width: 1rem;
 }
 .summaryTable .content {
   font-size: 2rem;
@@ -174,4 +183,37 @@ section {
 
 .newsContainer .title {
   display: flex;
+  font-size: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.vaccinationData {
+  display: flex;
+  font-weight: bolder;
+  justify-content: space-around;
+  align-items: center;
+  gap: 28rem;
+}
+.vaccinationHeader {
+  font-size: 4rem;
+  max-width: 1rem;
+}
+
+.vaccinationData .content {
+  font-size: 2rem;
+  display: flex;
+  gap: 4rem;
+}
+
+.vaccineUpdated {
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vaccinationAll {
+  background-color: pink;
+  padding-bottom: 4rem;
 }

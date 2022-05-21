@@ -10,41 +10,43 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <div class="header">
-      <div class="leftNav">
-        <img class="logo" src="./media/blackLogo.svg" alt="logo" />
-        <h1>Brief-Case</h1>
-      </div>
-
-      <nav>
-        <ul class="navLinks">
-          <li><a href="#">Summary</a></li>
-          <li><a href="#">Vaccination Data</a></li>
-          <li><a href="#">Live News</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <section class="hero">
-      <div class="wrapper">
-        <div class="title">
-          <h1>Your COVID-19 summaries all in one place.</h1>
+    <div class="mainPage">
+      <div class="header">
+        <div class="leftNav">
+          <img class="logo" src="./media/blackLogo.svg" alt="logo" />
+          <h1>Brief-Case</h1>
         </div>
-        <img src="./media/covidSplash.svg" alt="covidSplash" />
+
+        <nav>
+          <ul class="navLinks">
+            <li><a href="#">Summary</a></li>
+            <li><a href="#">Vaccination Data</a></li>
+            <li><a href="#">Live News</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="selector">
-        <form id="provinceButton">
-          <label class="provinceText"
-            >Choose your location, then scroll to begin.
-          </label>
-          <select title="Provinces" name="provinces" id="provinces">
-            <option id="options" value="Canada" selected disabled>
-              Canada
-            </option>
-          </select>
-        </form>
-      </div>
-    </section>
+
+      <section class="hero">
+        <div class="wrapper">
+          <div class="title">
+            <h1>Your COVID-19 summaries all in one place.</h1>
+          </div>
+          <img src="./media/covidSplash.svg" alt="covidSplash" />
+        </div>
+        <div class="selector">
+          <form id="provinceButton">
+            <label class="provinceText"
+              >Choose your location, then scroll to begin.
+            </label>
+            <select title="Provinces" name="provinces" id="provinces">
+              <option id="options" value="Canada" selected disabled>
+                Canada
+              </option>
+            </select>
+          </form>
+        </div>
+      </section>
+    </div>
 
     <section class="summaryAll">
       <div class="summaryTable">
@@ -61,31 +63,37 @@
       <div class="summaryUpdated">Last Updated: --/--/--</div>
     </section>
 
-    <section class="vaccinationData">
-      <h1 class="vaccineHeader">Vaccinations in Canada</h1>
-      <div class="content">
-        <p class="newVaccinations">New Vaccinations</p>
-        <p class="numNewVaccinations">-</p>
-        <p class="newVaccinated">New Vaccinated</p>
-        <p class="numNewVaccinated">-</p>
-        <p class="newBoosters">New Boosters</p>
-        <p class="numNewBoosters">-</p>
-        <p class="newDistributed">New Distributed</p>
-        <p class="numNewDistributed">-</p>
-        <p class="totalVaccinations">Total Vaccinations</p>
-        <p class="numTotalVaccination">-</p>
-        <p class="totalVaccinated">Total Vaccinated</p>
-        <p class="numTotalVaccinated">-</p>
-        <p class="totalBoosters">Total Boosters</p>
-        <p class="numTotalBoosters">-</p>
-        <p class="totalDistributed">Total Distributed</p>
-        <p class="numTotalDistributed">-</p>
+    <section class="vaccinationAll">
+      <div class="vaccinationData">
+        <h1 class="vaccinationHeader">Vaccinations Canada</h1>
+        <div class="content">
+          <div class="contentNew">
+            <p class="newVaccinations under">New Vaccinations</p>
+            <p class="numNewVaccinations">-</p>
+            <p class="newVaccinated under">New Vaccinated</p>
+            <p class="numNewVaccinated">-</p>
+            <p class="newBoosters under">New Boosters</p>
+            <p class="numNewBoosters">-</p>
+            <p class="newDistributed under">New Distributed</p>
+            <p class="numNewDistributed">-</p>
+          </div>
+          <div class="contentTotal">
+            <p class="totalVaccinations under">Total Vaccinations</p>
+            <p class="numTotalVaccination">-</p>
+            <p class="totalVaccinated under">Total Vaccinated</p>
+            <p class="numTotalVaccinated">-</p>
+            <p class="totalBoosters under">Total Boosters</p>
+            <p class="numTotalBoosters">-</p>
+            <p class="totalDistributed under">Total Distributed</p>
+            <p class="numTotalDistributed">-</p>
+          </div>
+        </div>
       </div>
       <div class="vaccineUpdated">Last Updated: --/--/--</div>
     </section>
 
     <section class="newsContainer">
-      <h1 class="title">Recent News around Canada</h1>
+      <h1 class="title">Recent News in Canada</h1>
       <div class="newsFeed"></div>
     </section>
   </body>
