@@ -114,7 +114,7 @@ section {
   align-items: center;
 }
 
-.summaryAll {
+#summaryAll {
   /* margin-top: 4rem; */
   width: 100%;
   height: 100vh;
@@ -187,7 +187,7 @@ section {
   background-color: #33333310;
 }
 
-.newsContainer .title {
+#newsContainer .title {
   display: flex;
   font-size: 4rem;
   justify-content: center;
@@ -219,6 +219,6 @@ section {
   align-items: center;
 }
 
-.vaccinationAll {
+#vaccinationAll {
   padding: 5rem 0 0 0;
 }
