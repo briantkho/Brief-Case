@@ -49,7 +49,7 @@ const caseNumber = document.querySelector(".newCases");
 const testNumber = document.querySelector(".newTests");
 const recoveriesNumber = document.querySelector(".newRecoveries");
 const headerSummaryName = document.querySelector(".summaryHeader");
-const headerVaccineName = document.querySelector(".vaccineHeader");
+const headerVaccineName = document.querySelector(".vaccinationHeader");
 
 const canadaSummary = async () => {
   const summaryEndpoint = "/summary";
