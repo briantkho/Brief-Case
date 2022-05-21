@@ -5,19 +5,26 @@
 
 html,
 body {
-  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
 }
 
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
 section {
   scroll-snap-align: start;
+  width: 100%;
+  height: 100vh;
 }
 
 .mainPage {
   width: 100%;
-  height: 100%;
-  background-color: #333333;
+  height: 100vh;
 }
 
 .hero {
@@ -55,19 +62,19 @@ section {
   text-decoration: none;
 }
 
-.wrapper {
+.landingSlide {
   display: flex;
   justify-content: space-between;
   padding: 0 2.5rem;
 }
 
-.wrapper h1 {
+.landingSlide h1 {
   font-size: 3rem;
   max-width: 23rem;
   padding-left: 2rem;
 }
 
-.wrapper img {
+.landingSlide img {
   align-items: center;
   width: 35rem;
   height: auto;
@@ -110,9 +117,8 @@ section {
 .summaryAll {
   /* margin-top: 4rem; */
   width: 100%;
-  height: 100%;
-  padding: 8rem 0 9rem 0;
-  background-color: rebeccapurple;
+  height: 100vh;
+  padding: 8rem 0 0 0;
 }
 
 .summaryTable {
@@ -214,6 +220,5 @@ section {
 }
 
 .vaccinationAll {
-  background-color: pink;
-  padding-bottom: 4rem;
+  padding: 5rem 0 0 0;
 }
