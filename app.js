@@ -244,7 +244,7 @@ const recentNews = async () => {
       console.log(jsonResponse);
 
       const loopNews = () => {
-        for (let i = 0; i < 12; i++) {
+        for (let i = 0; i < 8; i++) {
           const a = document.createElement("a");
           const img = new Image();
           const div = document.createElement("div");
