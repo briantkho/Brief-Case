@@ -248,3 +248,9 @@ section {
   width: 2.5rem;
   height: auto;
 }
+
+@media only screen and (max-width: 480px) {
+  .header {
+    display: none;
+  }
+}

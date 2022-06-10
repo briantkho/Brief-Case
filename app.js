@@ -187,7 +187,6 @@ const canadaVaccineData = async () => {
       method: "GET",
       headers: {
         accept: "application/json",
-        // "Access-Control-Allow-Origin": "*",
       },
     });
     if (response.ok) {
