@@ -55,7 +55,6 @@ const dropdownProvinces = async () => {
 dropdownProvinces();
 
 // Fetch and Display Data of All of Canada
-// !!! Todo: change summary data to reports data
 const caseNumber = document.querySelector(".newCases");
 const testNumber = document.querySelector(".newTests");
 const recoveriesNumber = document.querySelector(".newRecoveries");
@@ -71,7 +70,6 @@ const canadaSummary = async () => {
       method: "GET",
       headers: {
         accept: "application/json",
-        // "Access-Control-Allow-Origin": "*",
       },
     });
     if (response.ok) {
@@ -101,7 +99,6 @@ dropdown.onchange = () => {
         method: "GET",
         headers: {
           accept: "application/json",
-          // "Access-Control-Allow-Origin": "*",
         },
       });
 
